@@ -76,73 +76,17 @@ export default function Header() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Header Container */}
-        <div className="flex flex-col lg:flex-row justify-between items-center py-4 lg:h-24 gap-4 lg:gap-8">
-          
+        <div className="flex flex-col items-center py-4 gap-4 lg:gap-6">
+
           {/* Logo & Coat of Arms Section */}
-          <div className="flex items-center gap-3 select-none flex-shrink-0 w-full lg:w-auto justify-between lg:justify-start">
+          <div className="flex items-center justify-center select-none flex-shrink-0 w-full">
             <a href="/" className="flex items-center gap-3">
-              {/* Côte d'Ivoire Coat of Arms SVG */}
-              <div className="w-14 h-14 flex-shrink-0 flex items-center justify-center bg-[#fef3c7] rounded-xl border border-amber-200 p-0.5 shadow-sm">
-                <svg viewBox="0 0 100 100" className="w-full h-full text-amber-700" fill="currentColor">
-                  {/* Sun rays top */}
-                  <path d="M50,5 L50,15 M35,8 L40,17 M65,8 L60,17 M22,14 L30,20 M78,14 L70,20 M14,24 L24,28 M86,24 L76,28" stroke="#b45309" strokeWidth="3" strokeLinecap="round" />
-                  {/* Left Palm Tree */}
-                  <path d="M22,35 C18,40 18,60 26,75" fill="none" stroke="#d97706" strokeWidth="4.5" strokeLinecap="round" />
-                  <path d="M15,35 Q22,38 28,36" fill="none" stroke="#d97706" strokeWidth="2.5" />
-                  <path d="M17,45 Q24,47 28,43" fill="none" stroke="#d97706" strokeWidth="2.5" />
-                  <path d="M19,55 Q26,57 28,51" fill="none" stroke="#d97706" strokeWidth="2.5" />
-                  {/* Right Palm Tree */}
-                  <path d="M78,35 C82,40 82,60 74,75" fill="none" stroke="#d97706" strokeWidth="4.5" strokeLinecap="round" />
-                  <path d="M85,35 Q78,38 72,36" fill="none" stroke="#d97706" strokeWidth="2.5" />
-                  <path d="M83,45 Q76,47 72,43" fill="none" stroke="#d97706" strokeWidth="2.5" />
-                  <path d="M81,55 Q74,57 72,51" fill="none" stroke="#d97706" strokeWidth="2.5" />
-                  {/* Shield shape */}
-                  <path d="M32,25 C32,25 32,65 50,85 C68,65 68,25 68,25 Z" fill="#059669" stroke="#b45309" strokeWidth="2" />
-                  {/* Elephant head inside */}
-                  <circle cx="50" cy="50" r="13" fill="#fff" />
-                  {/* Ears */}
-                  <path d="M38,48 C34,42 42,38 46,45" fill="#fff" />
-                  <path d="M62,48 C66,42 58,38 54,45" fill="#fff" />
-                  {/* Trunk */}
-                  <path d="M47,56 Q50,72 52,72 Q54,72 53,56" fill="#fff" stroke="#94a3b8" strokeWidth="1" />
-                  {/* Tusks */}
-                  <path d="M43,58 Q46,65 47,60" fill="none" stroke="#d97706" strokeWidth="2" />
-                  <path d="M57,58 Q54,65 53,60" fill="none" stroke="#d97706" strokeWidth="2" />
-                  {/* Gold banner ribbon bottom */}
-                  <path d="M20,85 L80,85 L75,93 L25,93 Z" fill="#d97706" />
-                  <text x="50" y="91" fontSize="6" fontWeight="bold" fill="#fff" textAnchor="middle">UNION - DISCIPLINE - TRAVAIL</text>
-                </svg>
-              </div>
-
-              {/* Logo text & colored underlines */}
-              <div className="flex flex-col">
-                <span className="font-heading font-extrabold text-xl sm:text-2xl tracking-tight text-slate-800 flex items-baseline">
-                  <span>e-impots</span>
-                  <span className="text-[#059669]">.gouv.ci</span>
-                </span>
-                
-                {/* Horizontal Underlines */}
-                <div className="h-[2px] w-full flex mt-0.5">
-                  <div className="bg-[#f97316] w-3/4"></div>
-                  <div className="bg-[#059669] w-1/4"></div>
-                </div>
-
-                <span className="text-[#f97316] font-sans font-bold text-[8px] sm:text-[9.5px] tracking-wide mt-1">
-                  Portail fiscal officiel de Côte d'Ivoire
-                </span>
-              </div>
+              <img src="/logo-e-impots-fr.png" alt="Logo e-Impôts" className="h-12 sm:h-14 lg:h-16 object-contain" />
             </a>
-
-            {/* Language toggle shown on mobile header right */}
-            <div className="flex lg:hidden items-center gap-1.5 text-[10px] font-bold text-slate-400">
-              <span className="text-[#059669]">FR</span>
-              <span className="text-slate-300">|</span>
-              <span className="hover:text-slate-800 cursor-pointer">EN</span>
-            </div>
           </div>
 
           {/* Desktop Right Navigation buttons */}
-          <div className="hidden lg:flex items-center gap-2 flex-wrap max-w-4xl justify-end">
+          <div className="hidden lg:flex items-center justify-center gap-2 flex-wrap w-full max-w-5xl">
             {navButtons.map((btn, index) => (
               <button
                 key={index}
@@ -153,13 +97,7 @@ export default function Header() {
               </button>
             ))}
 
-            <div className="flex items-center gap-1 text-xs font-bold text-slate-400 ml-4 pl-4 border-l border-slate-200">
-              <span className="text-[#059669] cursor-pointer">FR</span>
-              <span className="text-slate-300">|</span>
-              <span className="hover:text-slate-800 cursor-pointer">EN</span>
-            </div>
           </div>
-
         </div>
 
         {/* Mobile Horizontal Scrollable Buttons Container */}
