@@ -80,7 +80,7 @@ export default function Header() {
           
           {/* Logo & Coat of Arms Section */}
           <div className="flex items-center gap-3 select-none flex-shrink-0 w-full lg:w-auto justify-between lg:justify-start">
-            <Link to="/" className="flex items-center gap-3">
+            <a href="/" className="flex items-center gap-3">
               {/* Côte d'Ivoire Coat of Arms SVG */}
               <div className="w-14 h-14 flex-shrink-0 flex items-center justify-center bg-[#fef3c7] rounded-xl border border-amber-200 p-0.5 shadow-sm">
                 <svg viewBox="0 0 100 100" className="w-full h-full text-amber-700" fill="currentColor">
@@ -131,7 +131,7 @@ export default function Header() {
                   Portail fiscal officiel de Côte d'Ivoire
                 </span>
               </div>
-            </Link>
+            </a>
 
             {/* Language toggle shown on mobile header right */}
             <div className="flex lg:hidden items-center gap-1.5 text-[10px] font-bold text-slate-400">
