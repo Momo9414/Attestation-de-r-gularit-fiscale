@@ -39,7 +39,7 @@ export default function DocumentViewer() {
     <div className="min-h-screen flex flex-col bg-[#f1f5f9]">
       <Header />
 
-      <main className="flex-grow flex flex-col items-center pt-6 pb-0 sm:pt-10">
+      <main className="flex-grow flex flex-col items-center pt-6 pb-0 sm:pt-10  mx-5">
         <div className="w-full bg-white shadow-sm border border-slate-100 p-3 sm:p-5 mx-4 max-w-2xl mb-6">
 
           {/* Card Green Header Status */}
