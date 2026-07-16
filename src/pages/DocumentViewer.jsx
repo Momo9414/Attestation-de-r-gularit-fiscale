@@ -15,7 +15,7 @@ export default function DocumentViewer() {
   useEffect(() => {
     setIsModalOpen(false);
   }, [location]);
-  
+
   // Find the requested document (or default to the first one at root)
   const doc = slug ? documents.find((d) => d.slug === slug) : documents[0];
 
@@ -39,40 +39,39 @@ export default function DocumentViewer() {
     <div className="min-h-screen flex flex-col bg-[#f1f5f9]">
       <Header />
 
-      <main className="flex-grow flex items-center justify-center px-4 py-10 sm:py-16">
-        <div className="w-full max-w-xl bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden transition-all duration-300">
-          
+      <main className="flex-grow flex flex-col items-center pt-6 pb-0 sm:pt-10">
+        <div className="w-full bg-white shadow-sm border border-slate-100 p-3 sm:p-5 mx-4 max-w-2xl mb-6">
+
           {/* Card Green Header Status */}
-          <div className="bg-[#ecfdf5] border-b border-[#d1fae5] px-5 py-3 flex items-center gap-3">
-            <div className="w-5 h-5 rounded-full bg-[#10b981] flex items-center justify-center text-white flex-shrink-0">
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <div className="bg-[#f8f9fa] px-4 py-3.5 flex items-center gap-3 mb-1.5">
+            <div className="w-6 h-6 rounded-full bg-[#059669] flex items-center justify-center text-white flex-shrink-0">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <span className="text-[#065f46] font-bold text-xs sm:text-sm tracking-tight">
-              Statut du document : {doc.status || "Validé"}
+            <span className="text-[#059669] font-semibold text-lg sm:text-xl tracking-tight">
+              Statut du document : {doc.status || "Signé"}
             </span>
           </div>
 
           {/* Card Body with detail fields */}
-          <div className="p-4 sm:p-5 flex flex-col gap-2.5 bg-slate-50/50">
+          <div className="flex flex-col gap-1.5">
             {doc.details.map((item, index) => (
-              <div 
-                key={index} 
-                className="bg-white border border-slate-100 rounded-xl p-3 flex items-center gap-3 shadow-sm hover:border-slate-200 transition-colors"
+              <div
+                key={index}
+                className="bg-[#f8f9fa] px-4 py-3 flex items-center gap-3"
               >
-                {/* Orange Circle Arrow Left */}
-                <div className="w-5.5 h-5.5 rounded-full bg-[#f97316] flex items-center justify-center text-white flex-shrink-0 shadow-sm shadow-orange-100">
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                {/* White Circle Arrow Right with Orange Border */}
+                <div className="w-6 h-6 rounded-full bg-white border-2 border-orange-200 flex items-center justify-center text-[#f97316] flex-shrink-0">
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </div>
-                
+
                 {/* Label and Value */}
-                <div className="text-xs sm:text-sm text-slate-700 leading-relaxed break-words w-full">
+                <div className="text-sm sm:text-base text-slate-700 leading-relaxed break-words w-full">
                   <span className="font-semibold text-slate-800">{item.label}</span>
-                  <span className="text-slate-400 font-normal"> : </span>
-                  <span className="text-slate-500 font-normal">{item.value}</span>
+                  <span className="text-slate-500 font-normal"> : {item.value}</span>
                 </div>
               </div>
             ))}
@@ -80,33 +79,35 @@ export default function DocumentViewer() {
             {/* Clickable button row "VOIR LE DOCUMENT" */}
             <button
               onClick={() => setIsModalOpen(true)}
-              className="mt-1.5 w-full bg-[#eff6ff] hover:bg-[#dbeafe] border border-blue-100 hover:border-blue-200 rounded-xl p-3 flex items-center gap-3 shadow-sm transition-all duration-200 text-left hover:scale-[1.01] cursor-pointer"
+              className="bg-[#f8f9fa] px-4 py-3 flex items-center gap-3 w-full text-left cursor-pointer hover:bg-gray-100 transition-colors"
               aria-label="Ouvrir la prévisualisation du document"
             >
-              {/* Orange Circle Arrow Left */}
-              <div className="w-5.5 h-5.5 rounded-full bg-[#f97316] flex items-center justify-center text-white flex-shrink-0 shadow-sm shadow-orange-100">
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+              {/* White Circle Arrow Right with Orange Border */}
+              <div className="w-6 h-6 rounded-full bg-white border-2 border-orange-200 flex items-center justify-center text-[#f97316] flex-shrink-0">
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </div>
-              
-              <span className="text-blue-700 font-bold text-xs sm:text-sm tracking-wider uppercase">
+
+              <span className="text-[#3b82f6] font-normal text-sm sm:text-base uppercase tracking-wide">
                 Voir le document
               </span>
             </button>
-
-
           </div>
+        </div>
 
+        {/* Bottom Image / Map Texture */}
+        <div className="w-full mt-auto">
+          <img src="/images/image.png" alt="Illustration" className="w-full h-auto object-cover opacity-90" />
         </div>
       </main>
 
       {/* PDF Modal */}
-      <PdfModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        pdfUrl={doc.pdf} 
-        title={doc.title} 
+      <PdfModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        pdfUrl={doc.pdf}
+        title={doc.title}
       />
 
       <Footer />
